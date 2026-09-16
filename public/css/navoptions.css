@@ -51,7 +51,7 @@
         white-space: nowrap;
     }
 
-@media (max-width: 992px) and (min-width: 769px) {
+@media (max-width: 992px) and (min-width: 768px) {
 
     /* Hide all filters */
     .filter {
@@ -68,23 +68,31 @@
    }
 
 
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
 
-    /* Hide ALL filters */
+    /* Hide all filter categories on mobile */
     #filter-list {
         display: none;
     }
 
-    /* Keep toggle visible */
+    /* Keep tax toggle visible normally */
     .tax-toggle {
         margin-left: auto;
     }
 
     #filters {
         justify-content: flex-end;
+        gap: 0;
+    }
+
+    /*
+       When hamburger menu is opened,
+       hide the tax toggle
+    */
+    body:has(.navbar-collapse.show) .tax-toggle {
+        display: none !important;
     }
 }
-
 
 .tax-info{
     display: none;
@@ -110,4 +118,105 @@
 .search-input{
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem;
+}
+
+
+
+
+
+
+
+
+/* Authentication buttons */
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Common button style */
+.auth-buttons .nav-link {
+    padding: 8px 16px !important;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.2s ease;
+}
+
+/* Add Yours */
+.add-yours-btn {
+    color: #222 !important;
+}
+
+.add-yours-btn:hover {
+    background-color: #f7f7f7;
+}
+
+/* Sign Up */
+.signup-btn {
+    background-color: #ff385c;
+    color: white !important;
+}
+
+.signup-btn:hover {
+    background-color: #e31c5f;
+    color: white !important;
+}
+
+/* Login */
+.login-btn {
+    border: 1px solid #ddd;
+    color: #222 !important;
+    background-color: white;
+}
+
+.login-btn:hover {
+    background-color: #f7f7f7;
+    border-color: #bbb;
+}
+
+/* Logout */
+.logout-btn {
+    background-color: #ff385c;
+    color: white !important;
+}
+
+.logout-btn:hover {
+    background-color: #e31c5f;
+    color: white !important;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .auth-buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        margin-top: 15px;
+        padding: 0 10px 10px;
+    }
+
+    .auth-buttons .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 11px 15px !important;
+        box-sizing: border-box;
+    }
+
+}
+
+/* tax toggle setup */
+
+@media (max-width: 767.98px) {
+
+    body:has(.navbar-collapse.show) .tax-toggle {
+        display: none !important;
+    }
+
 }

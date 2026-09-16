@@ -18,16 +18,36 @@
         </form>
       </div>
 
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Add Yours</a>
-        <% if(!currUser){%>
-        <a class="nav-link" href="/signUp"><b>Sign up</b></a>
-        <a class="nav-link" href="/login"><b>Login</b></a>
-        <%}%>
-        <% if(currUser){%>
-        <a class="nav-link" href="/logout"><b>Log out</b></a>   
-        <%}%>
-      </div>
+    <div class="navbar-nav ms-auto auth-buttons">
+    <a class="nav-link add-yours-btn" href="/listings/new">
+      <i class="fa-solid fa-circle-plus"></i>  
+      Add Yours
+    </a>
+
+    <% if(!currUser) { %>
+
+        <a class="nav-link signup-btn" href="/signUp">
+            <i class="fa-solid fa-user-plus"></i>
+            Sign up
+        </a>
+
+        <a class="nav-link login-btn" href="/login">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            Login
+        </a>
+
+    <% } %>
+
+    <% if(currUser) { %>
+
+        <a class="nav-link logout-btn" href="/logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Log out
+        </a>
+
+    <% } %>
+
+</div>
     </div>
   </div>
 </nav>
